@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,100&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Roboto', sans-serif;
+   background-color: #e5e5f7;
+   background-image: radial-gradient(circle at center center, #90fcc1, #e5e5f7), repeating-radial-gradient(circle at center center, #90fcc1, #90fcc1, 10px, transparent 20px, transparent 10px);
+   background-blend-mode: multiply;
+   display: flex;
+   min-height: 100vh;
+}
+
+.form {
+   width: 90%;
+   max-width: 400px;
+   margin: auto;
+   padding: 4.5em 3em;
+   background-color: #e6e5e5;
+   border-radius: 10px;
+   box-shadow: 0 5px 10px -5px rgba(0 0 0 / 100%);
+   text-align: center;
+}
+
+.form_title {
+   font-size: 2rem;
+   /*font-weight: 900;*/
+   margin-bottom: 0.5em;
+}
+
+.form_paragraph {
+   font-weight: 300;
+}
+
+.form_link {
+   font-weight: 400;
+   color: black;
+}
+
+.form_container {
+   margin-top: 3em;
+   display: grid;
+   gap: 2.5em;
+}
+
+.form_group {
+   position: relative;
+   --color: #5757577e;
+}
+
+.form_input {
+   width: 100%;
+   background: none;
+   color: #010101;
+   font-size: 1rem;
+   padding: .6em .3em;
+   /*Quita los bordes a los imputs*/
+   border: none;
+   outline: none;
+   border-bottom: 1px solid var(--color);
+   font-family: 'Roboto', sans-serif;
+}
+
+/*Cuando el focus esté activo en un label*/
+.form_input:focus+.form_label,
+.form_input:not(:placeholder-shown)+.form_label {
+   transform: translateY(-12px) scale(.8);
+   transform-origin: left top;
+   --color: #0e4527;
+}
+
+.form_label {
+   color: var(--color);
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   left: 5px;
+   transform: translateY(10px);
+   transition: transform .5s color .3s;
+}
+
+.form_submit {
+   background-color: #174f30;
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+   font-size: 1rem;
+   cursor: pointer;
+   padding: .8em 0;
+   border: none;
+   border-radius: 1.3em;
+}
+
+.form_line {
+   position: absolute;
+   border: 0;
+   left: 0;
+   width: 100%;
+   height: 1px;
+   background-color: #174f30;
+   transform: scale(0);
+   transform: left bottom;
+   transition: transform .5s;
+}
+
+@media screen and (min-width: 768px) {
+   .form {
+      padding: 4.5em 5em;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .form {
+      padding: 4.5em 7em;
+   }
+}
